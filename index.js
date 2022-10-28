@@ -26,7 +26,7 @@ client.on('messageCreate', message => {
         //getting data from news site
         const url = 'https://nos.nl/nieuws';
         const messageUrl = 'https://nos.nl';
-        const interval = 0.5 * 60 * 1000;
+        const interval = 1 * 60 * 1000;
         var first;
 
         setInterval(function() {
