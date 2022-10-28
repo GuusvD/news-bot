@@ -65,13 +65,14 @@ client.on('messageCreate', message => {
 
                 //checking if first title from previous run is same as first title from this run
                 //if not so, send message
-                if (titles[0].title != first) {
+                if (urls[0].url != first) {
                     message.channel.send(
                         '>>> ' + titles[0].title + '\n' + '\n' + descs[0].desc + '\n' + '\n' + '<' + messageUrl + urls[0].url + '>'
                     );
+                    message.channel.send('_ _');
                 }
 
-                first = titles[0].title;
+                first = urls[0].url;
             })
             .catch(err => console.log(err));
         }, interval);
