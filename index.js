@@ -1,4 +1,5 @@
 //getting dependencies
+require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -84,4 +85,4 @@ client.on('messageCreate', message => {
 });
 
 //must be last line
-client.login('MTAzNTIwNzIxMjIzMjA4OTcyMQ.GaVwef.hKAbhJfIFeoD0A0bRJWAnKDI1NWNIP6QYJ7hpk');
+client.login(process.env.ID);
