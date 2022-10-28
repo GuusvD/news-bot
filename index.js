@@ -25,6 +25,7 @@ client.on('messageCreate', message => {
 
         //getting data from news site
         const url = 'https://nos.nl/nieuws';
+        const messageUrl = 'https://nos.nl';
         const interval = 0.5 * 60 * 1000;
         var first;
 
@@ -66,7 +67,7 @@ client.on('messageCreate', message => {
                 //if not so, send message
                 if (titles[0].title != first) {
                     message.channel.send(
-                        '```' + titles[0].title + '```'
+                        '>>> ' + titles[0].title + '\n' + '\n' + descs[0].desc + '\n' + '\n' + '<' + messageUrl + urls[0].url + '>'
                     );
                 }
 
