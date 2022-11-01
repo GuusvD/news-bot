@@ -3,20 +3,6 @@ require('dotenv').config();
 const { Client, GatewayIntentBits } = require('discord.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
-const express = require('express');
-
-//setting up coupled express app
-const app = express();
-
-app.set('view engine', 'ejs');
-
-app.listen(process.env.PORT, () => {
-    console.log('News App is online!');
-});
-
-app.get('/', function(req, res) {
-    res.render('index');
-});
 
 //setting client with intents
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
