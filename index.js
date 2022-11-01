@@ -1,6 +1,6 @@
 //getting dependencies
 require('dotenv').config();
-const { Client, GatewayIntentBits } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
 
@@ -67,10 +67,13 @@ client.on('messageCreate', message => {
                 //checking if first title from previous run is same as first title from this run
                 //if not so, send message
                 if (urls[0].url != first) {
-                    message.channel.send(
-                        '>>> ' + titles[0].title + '\n' + '\n' + descs[0].desc + '\n' + '\n' + '<' + messageUrl + urls[0].url + '>'
-                    );
-                    message.channel.send('_ _');
+                    const embed = new EmbedBuilder()
+                        .setColor('#13FF00')
+                        .setTitle(titles[0].title)
+                        .setDescription(descs[0].desc)
+                        .setURL(messageUrl + urls[0].url);
+
+                    message.channel.send({ embeds: [embed] });
                 }
 
                 first = urls[0].url;
