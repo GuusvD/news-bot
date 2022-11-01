@@ -68,7 +68,7 @@ client.on('messageCreate', message => {
                 //if not so, send message
                 if (urls[0].url != first) {
                     const embed = new EmbedBuilder()
-                        .setColor('#DDFF0D')
+                        .setColor('#13FF00')
                         .setTitle(titles[0].title)
                         .setDescription(descs[0].desc)
                         .setURL(messageUrl + urls[0].url);
